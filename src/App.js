@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+
+// Componentes
+import TodoForm from './TodoForm';
+// import TodoList from './TodoList';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+        <Typography variant='h1' align='center'> Todos </Typography>
+        
+        <Grid container justify="center">
+          <Grid item md={1}>
+            <TodoForm />
+          </Grid>
+        </Grid>
+
+        <Grid container justify="center">
+          <Grid item md={4}>
+            {/* <TodoList/> */}
+          </Grid>
+        </Grid>
+
+  
+      </React.Fragment>
   );
 }
 
