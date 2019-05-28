@@ -33,7 +33,7 @@ const mapStateToProps = ({ todoReducer }) => {
     const {value} = todoReducer;
 
     // checar el state global despues de los cambios ya que regresa el state
-    console.log(todoReducer);
+    // console.log(todoReducer);
 
     return {value};
 }

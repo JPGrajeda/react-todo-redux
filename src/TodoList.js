@@ -10,21 +10,26 @@ import IconButton from '@material-ui/core/IconButton';
 // import CommentIcon from '@material-ui/icons/Comment';
 import DeleteIcon from '@material-ui/icons/Delete';
 
+// redux
+import { connect } from "react-redux";
+
 const TodoList = (props) => {
-    const { todos, deleteTodo, onChange } = props;
+    const { todos } = props;
 
     let todoList = todos.map(function (todo, index) {
          return (
             <ListItem dense button 
                 key={index} 
-                onClick={ () => onChange(index) }
+                // onClick={ () => onChange(index) }
             >
                 <Checkbox 
                     checked={todo.check} 
                 />
                 <ListItemText primary={todo.description} />
                 <ListItemSecondaryAction>
-                <IconButton onClick={ () => deleteTodo(index) }>
+                <IconButton 
+                    // onClick={ () => deleteTodo(index) }
+                >
                     <DeleteIcon  />
                 </IconButton>
                 </ListItemSecondaryAction>
@@ -33,12 +38,15 @@ const TodoList = (props) => {
     });
 
     return(
-
         <List>
             {todoList}
         </List>
     );
 }
 
+const mapStateToProps = ({todoReducer}) => {
+    const { todos } = todoReducer;
+    return { todos }
+}
 
-export default TodoList;
+export default connect(mapStateToProps)(TodoList);

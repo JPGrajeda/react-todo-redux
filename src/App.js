@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 
 // Componentes
 import TodoForm from './TodoForm';
-// import TodoList from './TodoList';
+import TodoList from './TodoList';
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
 
         <Grid container justify="center">
           <Grid item md={4}>
-            {/* <TodoList/> */}
+            <TodoList/>
           </Grid>
         </Grid>
 
